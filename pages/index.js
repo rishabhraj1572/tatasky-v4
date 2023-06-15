@@ -60,7 +60,7 @@ export default function Home() {
         console.log(window.location.origin.replace('localhost', '127.0.0.1') + '/api/getM3u?sid=' + theUser.sid + '_' + theUser.acStatus[0] + '&id=' + theUser.id + '&sname=' + theUser.sName + '&tkn=' + token + '&ent=' + theUser.entitlements.map(x => x.pkgId).join('_'));
     }
     else
-      setDynamicUrl("");
+      setDynamicUrl("r");
   }, [theUser, token])
 
   const getOTP = () => {
