@@ -41,6 +41,8 @@ export default function Home() {
           "long_url": window.location.origin.replace('localhost', '127.0.0.1') + '/api/getM3u?sid=' + theUser.sid + '_' + theUser.acStatus[0] + '&id=' + theUser.id + '&sname=' + theUser.sName + '&tkn=' + token + '&ent=' + theUser.entitlements.map(x => x.pkgId).join('_')
         });
 
+        setDynamicUrl(raw)
+
         var requestOptions = {
           method: 'POST',
           headers: myHeaders,
@@ -52,7 +54,7 @@ export default function Home() {
           .then(response => response.text())
           .then(result => {
             console.log(result);
-            setDynamicUrl(JSON.parse(result).link);
+            //setDynamicUrl(JSON.parse(result).link);
           })
           .catch(error => console.log('error', error));
       }
